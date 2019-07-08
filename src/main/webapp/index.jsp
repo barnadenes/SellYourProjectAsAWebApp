@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html class="no-js"> 
     <head>
@@ -6,7 +8,7 @@
         <title>Sell Your Product</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="index%20.css">
     </head>
     <body>
         <div id="wrapper">
@@ -15,7 +17,7 @@
             <div id="container">
                 <div id="selector">
                     <p>All Products</p>
-                    <form action="" method="">
+                    <form action="addProduct" method="POST">
                         <select name="list">
                             <option value="Car">Car</option>
                             <option value="House">House</option>
@@ -30,7 +32,9 @@
                 <div id="items">
                     <p>Your Selected Products</p>
                     <ul>
-                        <li>text</li>
+                        <c:forEach items="${products}" var="product">
+                            <li><c:out value="${product}"/></li>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>   

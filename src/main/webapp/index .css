@@ -23,6 +23,7 @@ body {
 }
 
 #selector {
+    height: 100%;
     width: 40%;
     border: 2px double darkcyan;
     text-align: center;
